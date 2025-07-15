@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuduTudu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="title">TuduTudu</div>
+    <div class="controls">
+      <button id="darkModeToggle">🌓</button>
+      <button id="historyBtn">🕓</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="task-controls">
+      <button id="addTaskBtn">Add New Task</button>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="complete">Complete</option>
+        <option value="incomplete">Incomplete</option>
+      </select>
+    </section>
+
+    <ul id="taskList"></ul>
+  </main>
+
+  <div id="taskModal" class="modal hidden">
+    <div class="modal-content">
+      <input type="text" id="newTaskInput" placeholder="Enter task..." />
+      <div class="modal-actions">
+        <button id="saveTask">Add</button>
+        <button id="cancelTask">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="historyModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>History</h2>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

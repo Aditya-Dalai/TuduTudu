@@ -1,0 +1,167 @@
+:root {
+  --bg: #fff;
+  --text: #000;
+  --primary: #6a0dad;
+  --card-bg: #f0f0f0;
+  --modal-bg: #ffffffcc;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --card-bg: #1e1e1e;
+  --modal-bg: #222222cc;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.controls button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.task-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#addTaskBtn,
+#filter {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  background-color: var(--card-bg);
+  color: var(--text);
+  font-weight: bold;
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.task {
+  background-color: var(--card-bg);
+  border: 1px solid var(--primary);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.task.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.task:hover .task-actions {
+  display: flex;
+}
+
+.task-actions {
+  display: none;
+  gap: 0.5rem;
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: var(--modal-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .task-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
