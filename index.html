@@ -1,50 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TuduTudu</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolist</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="top-bar">
-    <div class="title">TuduTudu</div>
-    <div class="controls">
-      <button id="darkModeToggle">🌓</button>
-      <button id="historyBtn">🕓</button>
+
+    <div class="todo-app">
+        <div class="header">
+            <h1>Dolist</h1>
+            <button id="theme-toggle">🌙</button>
+        </div>
+        <div class="input-row">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-btn">Add</button>
+        </div>
+        <ul id="task-list">
+            <!-- Tasks will be loaded here from localStorage -->
+        </ul>
     </div>
-  </header>
 
-  <main>
-    <section class="task-controls">
-      <button id="addTaskBtn">Add New Task</button>
-      <select id="filter">
-        <option value="all">All</option>
-        <option value="complete">Complete</option>
-        <option value="incomplete">Incomplete</option>
-      </select>
-    </section>
-
-    <ul id="taskList"></ul>
-  </main>
-
-  <div id="taskModal" class="modal hidden">
-    <div class="modal-content">
-      <input type="text" id="newTaskInput" placeholder="Enter task..." />
-      <div class="modal-actions">
-        <button id="saveTask">Add</button>
-        <button id="cancelTask">Cancel</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="historyModal" class="modal hidden">
-    <div class="modal-content">
-      <h2>History</h2>
-      <ul id="historyList"></ul>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
